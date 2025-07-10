@@ -101,3 +101,35 @@ Use \`git log --oneline\` to get commit IDs and reset to a specific one:
 ```bash
 git reset --hard <commit-id>
 ```
+
+## Git Rebase Practice using CLI
+
+The `rebase` is essential to understand how to rewrite commit history, linearize branches, and clean up your Git log.
+
+```bash
+#main branch
+echo "Line 1" > rebase.txt
+git add rebase.txt
+git commit -m "update main for rebase"
+
+echo "Main Line X" >> rebase.txt
+git add rebase.txt
+git commit -m "update main branch for rebase with commit X"
+
+#feature/rebase branch
+git checkout -b feature/rebase
+echo "Feature Line A" >> rebase.txt 
+git add rebase.txt
+git commit -m "update feature branch for rebase with commit A"
+
+echo "Feature Line B" >> rebase.txt
+git add rebase.txt
+git commit -m "update feature branch for rebase with commit B"
+
+#checkout to feature/rebase and rebase
+git checkout feature/rebase
+git rebase main
+git checkout main
+git merge feature/rebase
+git branch -d feature/rebase
+```
