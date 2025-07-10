@@ -1,1 +1,1 @@
-this is a practice merge file
+This is line one - to learn merge branches using cli
