@@ -21,6 +21,7 @@ git push -u origin main
 git branch -d feature/merge
 git push origin --delete feature/merge
 git branch
+```
 
 # ⚔️ Git Merge Conflict Practice Using CLI
 
@@ -51,3 +52,4 @@ git push -u origin main
 git branch
 git branch -d feature/merge-conflict
 git push origin --delete feature/merge-conflict
+```
