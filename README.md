@@ -53,3 +53,51 @@ git branch
 git branch -d feature/merge-conflict
 git push origin --delete feature/merge-conflict
 ```
+
+## 🔁 Git Reset Commits Practice Using CLI
+
+The \`reset\` command is used to undo commits in the branch to reset to previous or different commit if accidentally commited.
+
+### 🔸 Soft Reset
+
+Undoes the last commit but **keeps all changes staged** (**staging area**) — it's as if you’ve already run git add, but haven’t committed yet.
+
+```bash
+git reset --soft HEAD~1
+```
+
+> Note: Removes the last commit, all file changes remain in staging area - ready to commit. 
+
+> Use case: You want to revise the last commit message or combine commits.
+
+### 🔸 Mixed Reset (Default)
+
+Undoes the last commit and moves changes to **unstages** (keeps them in working directory) just like before adding.
+
+```bash
+git reset --mixed HEAD~1
+```
+
+> Note: Removes the last commit, all file changes remain in working directory - ready to add. 
+
+> Use case: You want to undo a commit and reselect which files to stage.
+
+### 🔸 Hard Reset
+
+Completely undoes the last commit and **discards all uncommitted changes** like before even making changes to the file.
+
+```bash
+git reset --hard HEAD~1
+```
+
+> Note: Removes the last commit, discards all uncommitted changes — files are reset to that previous commit state.
+
+> Use case: Use with caution. Ideal when you want to wipe changes completely and go back to a clean state.
+
+### 🔍 Extra Tip: Use Commit ID
+
+Use \`git log --oneline\` to get commit IDs and reset to a specific one:
+
+```bash
+git reset --hard <commit-id>
+```
