@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-This is line one - modified from main branch
-=======
-This is line one - modified from feature branch
->>>>>>> feature/merge-conflict
+This is line one
